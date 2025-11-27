@@ -16,7 +16,23 @@ namespace WoodPellets
         public DateOnly OrderDate { get; set; } 
         public DateOnly DeliveryDate { get; set; }
 
-        
+        public WoodPellet WoodPellet { get; set; } 
+        public Address DeliveryAddress { get; set; }
+        //public Customer Customer {get; set;}
+
+
+        //Constructor 
+
+        //Jeg har endnu ikke tilføjet WoodPellet, Address og Customer i constructoren, før vi ved, hvordan de skal bruges.
+
+        public Order(int amount, DateOnly orderDate, DateOnly deliveryDate)
+        {
+            orderDate = OrderDate;
+            deliveryDate = DeliveryDate;
+            Id = _nextId++; 
+        }
+
+
 
     }
 }
