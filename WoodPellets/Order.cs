@@ -18,15 +18,17 @@ namespace WoodPellets
 
         public WoodPellet WoodPellet { get; set; } 
         public Address DeliveryAddress { get; set; }
-        //public Customer Customer {get; set;}
+        public Customer Customer {get; set;}
 
 
         //Constructor 
 
-        //Jeg har endnu ikke tilføjet WoodPellet, Address og Customer i constructoren, før vi ved, hvordan de skal bruges.
-
-        public Order(int amount, DateOnly orderDate, DateOnly deliveryDate)
+        public Order(Customer customer, Address deliveryAddress, WoodPellet woodPellet, int amount, DateOnly orderDate, DateOnly deliveryDate)
         {
+
+            customer = Customer; 
+            deliveryAddress = DeliveryAddress; 
+            woodPellet = WoodPellet; 
             orderDate = OrderDate;
             deliveryDate = DeliveryDate;
             Id = _nextId++; 
